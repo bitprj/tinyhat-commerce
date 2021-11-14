@@ -25,6 +25,9 @@ const actions = {
         return data;
     },
     async save({ dispatch }, { id, quantity, incrementBy }) {
+        console.log(dispatch)
+        id = id.replace("https://tinyhats.s3.amazonaws.com/", "")
+        id = id.replace(".png", "")
         const { data } = await axios.put(`/api/cart/${id}`, {
             quantity,
             incrementBy

@@ -5,17 +5,17 @@
                     <v-img
                         class="rounded-lg d-lg-flex d-md-none"
                         min-height="100%"
-                        :src="require(`@/assets/products/${item.id}.jpg`)"
+                        :src="item.url"
                     />
                 </v-col>
 
                 <v-col cols="8" lg="9" md="12" sm="12">
                         <v-card-title class="text-subtitle-1 text-xl-h6 pa-0">
-                            {{ item.name }}
+                            {{ item.description }}
                         </v-card-title>
 
                         <v-card-actions class="justify-space-between text-xl-h6 px-0">
-                            ${{ item.priceSum }}
+                            ${{ 44 }}
 
                             <v-btn-toggle
                                 multiple
@@ -35,7 +35,6 @@
                                 </v-btn>
 
                                 <v-btn
-                                    :disabled="!item.stock"
                                     small
                                     @click="incrementItem(1)"
                                 >
@@ -94,7 +93,7 @@ export default {
             }
 
             this.$emit('save', {
-                id: this.item.id,
+                id: this.item.url,
                 incrementBy: value
             });
         }

@@ -9,11 +9,11 @@
             </div>
 
             <v-card-title class="pa-3 text-subtitle-1 text-xl-h6">
-                {{ product.name }}
+                {{ product.description }}
             </v-card-title>
 
             <v-card-subtitle class="pa-3 text-subtitle-1 text-xl-h6">
-                ${{ product.price }}
+                ${{ 44 }}
             </v-card-subtitle>
 
             <v-card-text class="pa-3 text-left text caption"> </v-card-text>
@@ -21,12 +21,12 @@
             <v-divider />
 
             <v-card-actions class="pa-3 justify-space-between">
-                <span>{{ product.stock ? `${product.stock} in` : 'out of' }} stock</span>
+                <span>{{ 3 ? `3 in` : 'out of' }} stock</span>
 
                 <v-btn
                     class="success"
                     :disabled="product.stock === 0"
-                    @click="$emit('add', product.id)"
+                    @click="$emit('add', product.url)"
                 >
                     <span class="d-xs-flex d-none d-xl-flex">Add to cart</span>
                     <v-icon right dark>mdi-cart-plus</v-icon>
