@@ -1,5 +1,4 @@
-const { products } = require('../../products.json');
-
+const fetch = require('node-fetch')
 class ProductIndexController {
     constructor(redisClientService) {
         this.redisClientService = redisClientService;
@@ -19,11 +18,15 @@ class ProductIndexController {
             return res.send(productList);
         }
 
+        let result = await fetch('https://api.tinyhat.me/api/hats')
+        let products = await result.json()
+
         for (const product of products) {
-            const { id } = product;
-
-            await this.redisClientService.jsonSet(`product:${id}`, '.', JSON.stringify(product));
-
+            const { url } = product;
+            url = url.replace("https://tinyhats.s3.amazonaws.com/", "")
+            url = url.replace(".png", "")
+            await this.redisClientService.jsonSet(`product:${url}`, '.', JSON.stringify(product));
+            
             productList.push(product);
         }
 

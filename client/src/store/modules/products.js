@@ -1,3 +1,4 @@
+const fetch = require('node-fetch')
 import axios from '@/plugins/axios';
 
 const initialState = {
@@ -18,14 +19,15 @@ const mutations = {
 
 const actions = {
     async fetch({ commit }) {
-        const { data } = await axios.get('/api/products');
-
+        let result = await fetch('https://api.tinyhat.me/api/hats');
+        let data = await result.json()
+        console.log(data)
         const sorted = data.sort((a, b) => {
-            if (a.name.localeCompare(b.name) > 0) {
+            if (a.description.localeCompare(b.description) > 0) {
                 return 1;
             }
 
-            if (a.name.localeCompare(b.name) < 0) {
+            if (a.description.localeCompare(b.description) < 0) {
                 return -1;
             }
 

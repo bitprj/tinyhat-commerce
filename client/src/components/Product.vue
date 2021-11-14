@@ -4,7 +4,7 @@
             <div class="d-flex justify-center">
                 <v-img
                         max-width="65%"
-                        :src="require(`@/assets/products/${product.id}.jpg`)"
+                        :src="product.url"
                 />
             </div>
 
