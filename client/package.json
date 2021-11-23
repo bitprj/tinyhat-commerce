@@ -17,6 +17,8 @@
     "dependencies": {
         "axios": "^0.21.1",
         "core-js": "^3.6.5",
+        "node-fetch": "^2.6.2",
+        "node-http": "0.0.5",
         "vue": "^2.6.12",
         "vuelidate": "^0.7.6",
         "vuetify": "^2.4.0",
@@ -49,7 +51,9 @@
         "parserOptions": {
             "parser": "babel-eslint"
         },
-        "rules": {}
+        "rules": {
+            "vue/no-unused-components": "off"
+        }
     },
     "browserslist": [
         "> 1%",
