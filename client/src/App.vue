@@ -5,7 +5,9 @@
                 <div class="pa-4 rounded-lg red darken-1">
                     <v-icon color="white" size="45">mdi-cart-plus</v-icon>
                 </div>
-                <h1 class="ml-6 font-weight-regular">TinyHat.me Online Store</h1>
+                <h1 class="ml-6 font-weight-regular"
+                    >TinyHat.me Online Store</h1
+                >
             </div>
         </v-container>
 
@@ -18,6 +20,7 @@
                 <v-col cols="12" sm="5" md="4" class="d-flex flex-column">
                     <cart />
                     <reset-data-btn class="mt-6" />
+                    <CustomHat :products="products" />
                 </v-col>
             </v-row>
 
@@ -34,6 +37,7 @@ import Cart from '@/components/Cart';
 import ProductList from '@/components/ProductList';
 import ResetDataBtn from '@/components/ResetDataBtn.vue';
 import Info from '@/components/Info';
+import CustomHat from '@/components/CustomHat.vue';
 
 export default {
     name: 'App',
@@ -41,6 +45,7 @@ export default {
     components: {
         ProductList,
         Cart,
+        CustomHat,
         ResetDataBtn,
         Info
     },
