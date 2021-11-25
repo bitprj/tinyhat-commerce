@@ -1,15 +1,15 @@
 <template>
-        <v-row v-if="products.length" align="stretch">
-            <product
-                v-for="product in products"
-                :key="product.id"
-                :product="product"
-                @add="addToCart"
-            />
-        </v-row>
-        <v-row v-else>
-            <p> No products in store </p>
-        </v-row>
+    <v-row v-if="products.length" align="stretch">
+        <product
+            v-for="product in products"
+            :key="product.id"
+            :product="product"
+            @add="addToCart"
+        />
+    </v-row>
+    <v-row v-else>
+        <p> No products in store </p>
+    </v-row>
 </template>
 
 <script>

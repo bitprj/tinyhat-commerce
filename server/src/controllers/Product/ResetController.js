@@ -19,7 +19,6 @@ class ProductResetController {
             var { url } = product;
             url = url.replace("https://tinyhats.s3.amazonaws.com/", "")
             url = url.replace(".png", "")
-            console.log(url)
             await this.redisClientService.jsonSet(`product:${url}`, '.', JSON.stringify(product));
         }
 

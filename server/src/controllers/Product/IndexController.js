@@ -22,11 +22,11 @@ class ProductIndexController {
         let products = await result.json()
 
         for (const product of products) {
-            const { url } = product;
+            var { url } = product;
             url = url.replace("https://tinyhats.s3.amazonaws.com/", "")
             url = url.replace(".png", "")
             await this.redisClientService.jsonSet(`product:${url}`, '.', JSON.stringify(product));
-            
+
             productList.push(product);
         }
 
