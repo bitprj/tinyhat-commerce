@@ -10,5 +10,5 @@ module.exports = {
     proseWrap: 'always',
     htmlWhitespaceSensitivity: 'strict',
     endOfLine: 'lf',
-    arrowParens: 'avoid'
+    arrowParens: 'avoid',
 };

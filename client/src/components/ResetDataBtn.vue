@@ -7,17 +7,14 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-
 export default {
     computed: {
         ...mapGetters({ cartItems: 'cart/getItems' })
     },
-
     methods: {
         ...mapActions({
             reset: 'products/reset'
         }),
-
         async resetData() {
             try {
                 await this.reset();
@@ -27,4 +24,3 @@ export default {
         }
     }
 };
-</script>
